@@ -1,0 +1,74 @@
+body {
+	background-color: black;
+}
+
+.text-blue {
+	color: #4488cc;
+}
+
+.text-orange {
+	color: #ffbc40;
+}
+
+.text-white {
+	color: white;
+}
+
+.header-div {
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-radius-topleft: 12px;
+	-moz-border-radius-topright: 12px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+
+	background-color: #333333;
+	color: white;
+}
+
+.bg-gray {
+	background-color: #333333;
+}
+
+.bg-game {
+	background-color: #34dd88;
+}
+
+.bg-light-gray {
+	background-color: #cccccc;
+}
+
+.thick-border {
+	border: 8px solid #333333;
+  -webkit-box-sizing: border-box; /* Android ≤ 2.3, iOS ≤ 4 */
+     -moz-box-sizing: border-box; /* Firefox 1+ */
+          box-sizing: border-box;
+}
+
+#tetris {
+	border: 3px solid #ffff66;
+}
+
+#song-history {
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-radius-topleft: 12px;
+	-moz-border-radius-topright: 12px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+
+	background-color: white;
+	border: 4px solid black;
+	height: 500px;
+}
+
+a li {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover li {
+	background-color: #4488ff;
+	text-decoration: none;
+	color: black;
+}

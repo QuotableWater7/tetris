@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+    <title>Demo - Playlisting for Games</title>
+  </head>
+  <body>
+    <div id="api"></div>
+    <br/><br/>
+    <div class="container">
+      <div class="row">
+        <div class="span12 header-div">
+          <h1 class="text-center"><span class="text-blue">Music Hack Day</span> - <span class="text-orange">Denver</span></h1>
+        </div>
+        <div class="span12 bg-game thick-border" id="example0">
+          <br/>
+          <div class="span8 offset2">
+            <h3>Overview</h3>
+            My goal coming into the hackathon was to gather some ideas for generating music automatically for internet games.  My apps use the Echo Nest "Dynamic Playlisting" API to play songs in a specific genre and tempo based on what is happening in the game.
+
+            <h5>The Apps</h5>
+            <ul>
+              <li><a href="tetris_v1">Tetris v1</a> - increases the tempo of the played song each time the user clears a row.  In reality, I would have the tempo increase with levels...  but I used line clearing so I could see the effect much quicker.</li>
+              <li><a href="tetris_v2">Tetris v2</a> - in this version, music is selected based on how close the user is to losing.  When blocks are near the bottom, I select rock tracks with a tempo of around 90bpm.  In the middle, I select techno tracks at about 140bpm.  Near the top, I start throwing some metal tracks at you with a tempo of about 200bpm.</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="span12 text-white thick-border text-center">
+          Apps by JT Bowler | Powered by <a href="http://the.echonest.com">The Echo Nest</a> and <a href="http://rd.io">Rdio</a>.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

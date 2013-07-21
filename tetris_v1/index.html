@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+    <script src="js/echonest.js"></script>
+    <script src="js/old_app.js"></script>
+    <script src="//www.rdio.com/api/api.js?client_id=u702NCZkRSai1hQuSnjZhw"></script>
+    <title>Demo - Playlisting for Games</title>
+  </head>
+  <body>
+    <div id="api"></div>
+    <br/><br/>
+    <div class="container">
+      <div class="row">
+        <div class="span12 header-div">
+          <h1 class="text-center"><span class="text-blue">Music Hack Day</span> - <span class="text-orange">Denver</span></h1>
+        </div>
+        <div class="span12 bg-game thick-border" id="example0">
+          <br/>
+          <div class="span4 offset1">
+            <canvas id="tetris" width="350" height="500"></canvas>
+            <p>Score: <span id="score"></span> Lines: <span id="lines"></span> Level: <span id="level"></span></p>
+            <script src="js/old_tetris.js"></script>
+            <script type="text/javascript">
+              var en = new EchoNest("CXUQGUSG0ZNDWJQGH");
+              var pl = new Playlist(en);
+
+              window.playHistory = {songs : []};
+              window.tempo = 80;
+              window.musicSetting = 0;
+
+              R.ready(function() {
+                var t = new Tetris('tetris', 25, function(score, lines, level, pl) {
+                  document.getElementById('score').innerHTML = score;
+                  document.getElementById('lines').innerHTML = lines;
+                  document.getElementById('level').innerHTML = level;
+                });
+
+                initPlaylist([{param: 'target_tempo', value: window.tempo}]);
+              });
+            </script>
+          </div>
+          <div class="span4 offset1" id="song-history">
+            <h3 class="text-center">Song History</h3>
+            <hr/>
+            <div id="results"></div>
+            <div id="maxY"></div>
+          </div>
+        </div>
+          <footer class="span12 text-white thick-border text-center">
+            App by JT Bowler | Powered by <a href="http://the.echonest.com">The Echo Nest</a> and <a href="http://rd.io">Rdio</a>.
+          </footer>
+      </div>
+      <script type="underscore/template" id="song-hist">
+        <ul>
+          <% for (var i=songs.length-1; i>=0 && i>=songs.length-15; i--) { %>
+            <a href="#"><li>
+              <%= songs[i].title %> - <b><%= songs[i].artist_name %></b>
+            </li></a>
+          <% } %>
+        </ul>
+      </script>
+    </div>
+  </body>
+</html>
